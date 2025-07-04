@@ -1,0 +1,451 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f8f8f8;
+    color: #333;
+    animation: fadeIn 1s ease;
+}
+
+header {
+    background-color: #d2691e;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 20px;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #d2691e;
+    padding: 10px 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #ffdd99;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+section div {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    width: 220px;
+    border-radius: 10px;
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 200px;
+    height: 330px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background-color: white;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.product img:hover {
+    transform: scale(1.05);
+}
+
+.product-description {
+    min-height: 30px;
+}
+
+.home-section {
+    background-image: url("../images/indian-condiments-with-copy-space-view.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    padding: 500px 20px 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.home-section h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.home-section p {
+    font-size: 20px;
+    max-width: 600px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #d2691e;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #b35917;
+    transform: scale(1.05);
+}
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.about-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 10px auto 20px auto;
+    line-height: 1.6;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+    margin-top: 20px;
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    min-height: calc(100vh - 150px);
+    justify-content: center;
+    background-color: #f9f3e7;
+    color: #333;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.contact-form button {
+    background-color: #d2691e;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #b35917;
+}
+
+.flash-message.success {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.product {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .about-section,
+    .contact-section {
+        padding: 40px 10px;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+button {
+    background-color: #d2691e;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #b35917;
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #d2691e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin-bottom: 15px;
+}
+
+.social-icons img {
+    width: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.social-icons a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+#cart-count {
+    color: white;
+    margin-left: 15px;
+    font-weight: bold;
+    cursor: default;
+}
+
+/* ✅ Cart Styling Polished */
+
+.cart-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-color: #fff8f0;
+    padding: 20px;
+}
+
+.cart-container {
+    width: 90%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.cart-table th {
+    background-color: #d2691e;
+    color: white;
+}
+
+.total-amount {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.cart-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.cart-buttons button {
+    background-color: #d2691e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+}
+
+.cart-buttons button:hover {
+    background-color: #b35917;
+}
+
+.cart-buttons a {
+    text-decoration: none;
+}
+
+.cart-center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.total-amount {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.cart-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.flash-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 15px auto;
+    text-align: center;
+    border-radius: 8px;
+    width: fit-content;
+    animation: fadeIn 0.5s ease;
+}

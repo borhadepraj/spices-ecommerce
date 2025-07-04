@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Homemade Spices</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Our Homemade Spices</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/products">Products</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/cart">Cart ({{ cart|length }})</a>
+    </nav>
+</header>
+
+<!-- Flash messages block -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="flash-message {{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<section class="about-section">
+    <h2>About Us</h2>
+    <p>At Homemade Spices, we believe that food tastes best when it’s made with love and care. Our spices are freshly prepared in small batches using traditional methods to ensure premium quality, freshness, and unbeatable aroma.</p>
+
+    <p>We source raw ingredients directly from farmers and hand-process them at home, free from chemicals or preservatives. Our mission is to bring back the authentic flavors of Indian kitchens to every household.</p>
+
+    <img src="{{ url_for('static', filename='images/Chilli_Powder.jpg') }}" alt="About Us" class="about-image">
+</section>
+
+<footer>
+    &copy; 2025 Homemade Spices. All rights reserved.
+    <div class="social-icons">
+        <a href="https://instagram.com" target="_blank">
+            <img src="static/images/Instagram.png" alt="Instagram">
+        </a>
+        <a href="https://wa.me

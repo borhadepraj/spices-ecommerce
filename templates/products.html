@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Our Homemade Spices</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/products">Products</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/cart">Cart ({{ cart|length }})</a>
+        </nav>
+    </header>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div id="flash-message">
+            {% for category, message in messages %}
+                <div class="flash-message {{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% endwith %}
+
+    <h2 class="section-heading">Our Products</h2>
+
+    <section>
+        <div class="product-card">
+            <h3>Turmeric Powder</h3>
+            <img src="{{ url_for('static', filename='images/Turmeric.jpg') }}" alt="Turmeric Powder">
+            <p class="product-description">Rs. 50 / 100g</p>
+            <form action="/add_to_cart" method="POST">
+                <input type="hidden" name="product" value="Turmeric Powder">
+                <input type="hidden" name="price" value="50">
+                Quantity: <input type="number" name="quantity" value="1" min="1">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <h3>Chilli Powder</h3>
+            <img src="{{ url_for('static', filename='images/Chilli_Powder.jpg') }}" alt="Chilli Powder">
+            <p class="product-description">Rs. 40 / 100g</p>
+            <form action="/add_to_cart" method="POST">
+                <input type="hidden" name="product" value="Chilli Powder">
+                <input type="hidden" name="price" value="40">
+                Quantity: <input type="number" name="quantity" value="1" min="1">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <h3>Garam Masala</h3>
+            <img src="{{ url_for('static', filename='images/Garam_Masala.jpg') }}" alt="Garam Masala">
+            <p class="product-description">Rs. 100 / 100g</p>
+            <form action="/add_to_cart" method="POST">
+                <input type="hidden" name="product" value="Garam Masala">
+                <input type="hidden" name="price" value="100">
+                Quantity: <input type="number" name="quantity" value="1" min="1">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <h3>Coriander Powder</h3>
+            <img src="{{ url_for('static', filename='images/Coriander-Powder.jpg') }}" alt="Coriander Powder">
+            <p class="product-description">Rs. 70 / 100g</p>
+            <form action="/add_to_cart" method="POST">
+                <input type="hidden" name="product" value="Coriander Powder">
+                <input type="hidden" name="price" value="70">
+                Quantity: <input type="number" name="quantity" value="1" min="1">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <h3>Cumin Powder</h3>
+            <img src="{{ url_for('static', filename='images/Cumin_Powder.jpg') }}" alt="Cumin Powder">
+            <p class="product-description">Rs. 55 / 100g</p>
+            <form action="/add_to_cart" method="POST">
+                <input type="hidden" name="product" value="Cumin Powder">
+                <input type="hidden" name="price" value="55">
+                Quantity: <input type="number" name="quantity" value="1" min="1">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <h3>Sambar Masala</h3>
+            <img src="{{ url_for('static', filename='images/Sambar.jpg') }}" alt="Sambar Masala">
+            <p class="product-description">Rs. 100 / 100g</p>
+            <form action="/add_to_cart" method="POST">
+                <input type="hidden" name="product" value="Sambar Masala">
+                <input type="hidden" name="price" value="100">
+                Quantity: <input type="number" name="quantity" value="1" min="1">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <h3>Kasuri Methi</h3>
+            <img src="{{ url_for('static', filename='images/Kasuri.jpg') }}" alt="Kasuri Methi">
+            <p class="product-description">Rs. 60 / 100g</p>
+            <form action="/add_to_cart" method="POST">
+                <input type="hidden" name="product" value="Kasuri Methi">
+                <input type="hidden" name="price" value="60">
+                Quantity: <input type="number" name="quantity" value="1" min="1">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+        <div class="product-card">
+            <h3>Chaat Masala</h3>
+            <img src="{{ url_for('static', filename='images/Chaat.jpg') }}" alt="Chaat Masala">
+            <p class="product-description">Rs. 50 / 100g</p>
+            <form action="/add_to_cart" method="POST">
+                <input type="hidden" name="product" value="Chaat Masala">
+                <input type="hidden" name="price" value="50">
+                Quantity: <input type="number" name="quantity" value="1" min="1">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Homemade Spices. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank">
+                <img src="static/images/Instagram.png" alt="Instagram">
+            </a>
+            <a href="https://wa.me/919876543210" target="_blank">
+                <img src="static/images/WhatsApp.png" alt="WhatsApp">
+            </a>
+            <a href="https://facebook.com" target="_blank">
+                <img src="static/images/Facebook.png" alt="Facebook">
+            </a>
+            <a href="mailto:spiceshop@gmail.com">
+                <img src="static/images/Gmail.png" alt="Gmail">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        setTimeout(() => {
+            const flash = document.getElementById('flash-message');
+            if (flash) {
+                flash.style.display = 'none';
+            }
+        }, 2000);
+    </script>
+
+</body>
+</html>
